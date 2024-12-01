@@ -30,8 +30,13 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         
         try:
-            # Reading code
+            
+            """Reading dataset from SQL Database"""
             df = read_sql_data()
+
+            """Reading dataset from notebook/data/stud.csv"""
+            # df = pd.read_csv('notebook/data/stud.csv')
+
             logging.info('Reading from mysql database.')
 
             os.makedirs(os.path.dirname(self.data_ingestion_config.data_data_path), exist_ok=True)
